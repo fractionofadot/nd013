@@ -5,12 +5,15 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 # Read in the saved objpoints and imgpoints
-dist_pickle = pickle.load( open( "wide_dist_pickle.p", "rb" ) )
-objpoints = dist_pickle["objpoints"]
-imgpoints = dist_pickle["imgpoints"]
+# dist_pickle = pickle.load( open( "wide_dist_pickle.p", "rb" ) )
+# objpoints = dist_pickle["objpoints"]
+# imgpoints = dist_pickle["imgpoints"]
+
+objpoints = pickle.load( open("objpoints.pickle", "rb") )
+imgpoints = pickle.load( open("imgpoints.pickle", "rb") )
 
 # Read in an image
-img = cv2.imread('test_image.png')
+img = cv2.imread('calibration_images/calibration_1.jpg')
 
 # TODO: Write a function that takes an image, object points, and image points
 # performs the camera calibration, image distortion correction and 
